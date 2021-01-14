@@ -1,0 +1,143 @@
+/*Color of the body*/
+body {
+    background-color: white;
+    border: solid #ffcc13;
+}
+
+/*Placing heading in the center. */
+#title {
+    /*    justify-content: center;*/
+    height: 9%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#heading {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+}
+
+
+/*Start info div*/
+#startDiv {
+    margin: 5px;
+    text-align: center;
+}
+
+/* Designing P tag with stats*/
+p {
+    text-align: center;
+    font-size: 16px;
+    color: maroon;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+/*Designing the Start button*/
+/*
+#startButton {
+    border: 4px #ffcc13 solid;
+    border-radius: 15px;
+    font-size: 16px;
+    color: red;
+    padding: 5px;
+    background-color: white;
+    font-weight: bold;
+}
+*/
+
+/*Outer box containing all the cards.*/
+.container {
+    /*    border: 1px black dashed;*/
+    height: 600px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    /*    direction: column wrap;*/
+}
+
+/* Count down starting screen. */
+.startScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gold;
+    opacity: 0.3;
+    z-index: 9999;
+}
+
+/* Timer for the start screen. */
+#timer {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 200px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: black;
+}
+
+/*Numbers within the cards -- P tag*/
+.numbers {
+    font-family: monospace;
+    font-size: 50px;
+    font-weight: bolder;
+    padding: 20px;
+    text-align: center;
+}
+
+/*Flip Cards properties */
+.card {
+    position: relative;
+    height: 34%;
+    width: 10.8%;
+    /*    border: 1px solid black;*/
+    /*    margin: 5px 10px 5px 10px;*/
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/*
+.card:hover {
+    transform: rotateY(180deg);
+}
+*/
+
+/*Properties for front and back divs*/
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/*Back div to stay hidden till turned.*/
+.back {
+    transform: rotateY(180deg);
+}
+
+/*image properties*/
+.frontFace {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/*Class to rotate the clicked card. */
+.rollover {
+    transform: rotateY(180deg);
+}
+
+/*Done cards property*/
+.done {
+    opacity: 0.6;
+}
