@@ -118,7 +118,7 @@ $(document).ready(function () {
                                     secondClick.addClass("done").removeClass("rollover");
                                     firstClick.addClass("done").removeClass("rollover");
 
-                                }, 2000)
+                                }, 1000)
                             } else {
                                 if (points == 0) {
 
