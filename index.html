@@ -5,28 +5,68 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Picture-Flip Game</title>
+     <!-- Latest compiled and minified CSS -->
+
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
      <script src="js/main.js"></script>
      <link rel="stylesheet" href="css/main.css">
  </head>
 
  <body>
      <!--    Page Heading-->
-     <div id="title"><img id="heading" src="img/title.png" alt="Flip the card"></div>
-
-     <!--  P for Initial stats -->
-     <p>POINTS: <span id="points">0</span> || CLICKS: <span id="click">0</span> || TIMER: <span id="time">0 Seconds</span></p>
+     <div class="jumbotron" id="title"><img id="heading" src="img/title.png" alt="Flip the card"></div>
 
      <!--    Outer box for the cards.-->
-     <div class="container">
+     <div class="container-fluid">
+
+         <!--         Start screen -->
          <div class="startScreen">
              <div id="timer">3</div>
          </div>
 
+         <!--         3 columns in a row-->
+         <div class="row">
+             <!--            Left Side bar -->
+             <div class="side col-sm-12 col-md-2">
+                 <!--  P for Initial stats -->
+                 <p class="score">POINTS: <span id="points">0</span> CLICKS: <span id="click">0</span> TIMER: <span id="time">0 Seconds</span></p>
+             </div>
+
+             <!--             Middle col with cards -->
+             <div class="containers col-sm-12 col-md-8">
+             </div>
+
+             <!--             Right side bar-->
+             <div class="col-sm-12 col-md-2">
+                 <!-- Nav Bar -->
+
+                 <nav class="navbar justify-content-center">
+
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                             <button type="button" class=" strt btn btn-sm btn-warning" onclick="strt();">Start Game</button>
+                         </li>
+                         <li class="nav-item">
+                             <!-- reload button-->
+                             <button type="button" onclick="reloading();" class="btn btn-sm btn-primary">Reload Game</button>
+                         </li>
+
+                         <li class="nav-item">
+                             <!--My portfolio -->
+                             <button type="button" class="btn btn-sm btn-info" onclick="location.href='http://kaurbalpreet.altervista.org/'">Developer Info</button>
+                         </li>
+                     </ul>
+                 </nav>
+             </div>
+         </div>
      </div>
  </body>
- <footer>
-     <p> © 2021 Made by Balpreet Kaur ♥️</p>
- </footer>
+ <div class="container-fluid text-center">
+     <p class="foot"> ©2021 Made by Balpreet Kaur ♥️</p>
+ </div>
 
  </html>

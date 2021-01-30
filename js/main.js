@@ -1,4 +1,8 @@
 $(document).ready(function () {
+
+    // Array with values to be shuffled.
+    var arr = ["hinata.png", "itachi.jpg", "kakashi.png", "minato.png", "naruto.jpg", "sakura.png", "sasuke.jpg", "team7.png", "minato.png", "sasuke.jpg", "naruto.jpg", "itachi.jpg", "hinata.png", "team7.png", "kakashi.png", "sakura.png"];
+
     //    Initial score value.
     let score = 0;
     //    Counter time.
@@ -9,8 +13,6 @@ $(document).ready(function () {
     let clicks = 0;
     //Initial value of points.
     let points = 0;
-    // Array with values to be shuffled.
-    var arr = ["hinata.png", "itachi.jpg", "kakashi.png", "minato.png", "naruto.jpg", "sakura.png", "sasuke.jpg", "team7.png", "minato.png", "sasuke.jpg", "naruto.jpg", "itachi.jpg", "hinata.png", "team7.png", "kakashi.png", "sakura.png"];
 
     // Shuffle function
     const shuffleArray = array => {
@@ -39,6 +41,7 @@ $(document).ready(function () {
     }, 1000)
 
     //    Clearing the screen for play to begin.
+
     setTimeout(function () {
         $(".card").each(function () {
             $(this).removeClass("rollover");
@@ -46,22 +49,19 @@ $(document).ready(function () {
         $(".startScreen").fadeOut();
     }, 3000)
 
+
+
     /* Time counter to complete the game.*/
     setInterval(function () {
         t = t + 1
-        $("#time").text("0 hr " + t + " Sec");
+        $("#time").text(t + " Sec");
     }, 1000);
 
     // For loop to print the randum numbers with the cards.
     for (var i = 0; i < arr.length; i++) {
 
-        $(".container").append('<div class="card rollover"> <div class = "front"><img class= "frontFace" src="img/front-pic.png" alt="card front"></div><div class="back"><img class= "frontFace" src="img/' + arr[i] + '"></div></div>');
+        $(".containers").append('<div class="card rollover"> <div class = "front"><img class= "frontFace" src="img/front-pic.png" alt="card front"></div><div class="back"><img class= "frontFace" src="img/' + arr[i] + '"></div></div>');
     }
-
-    //On click rotating the card.
-    //    $(".card").click(function () {
-    //        $(this).css('transform', 'rotateY(180deg)');
-    //    });
 
 
     //    NEW CODE..
@@ -99,6 +99,7 @@ $(document).ready(function () {
                 //getting index of the clicked div.
                 var currentIndex = $(this).index();
                 console.log("currentIndex: " + currentIndex);
+
 
                 $(".card").each(function (index) {
                     if (currentIndex == $(this).index()) {
@@ -141,10 +142,16 @@ $(document).ready(function () {
                         }
                     }
                 })
+
             }
 
         }
 
     });
-
 });
+
+
+//reload function.
+function reloading() {
+    location.reload();
+}
