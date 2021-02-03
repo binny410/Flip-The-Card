@@ -77,7 +77,7 @@ $(document).ready(function () {
 
         //If all the cards has been revealed.
         if (checkArray.length == arr.length) {
-            alert("Thanks for playing!");
+            $(".endScreen").removeClass("hide");
         } else {
             //Incrementing value of click.
             clicks = clicks + 1;
