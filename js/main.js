@@ -60,7 +60,7 @@ $(document).ready(function () {
     // For loop to print the randum numbers with the cards.
     for (var i = 0; i < arr.length; i++) {
 
-        $(".containers").append('<div class="card rollover"> <div class = "front"><img class= "frontFace" src="img/front-pic.png" alt="card front"></div><div class="back"><img class= "frontFace" src="img/' + arr[i] + '"></div></div>');
+        $(".abc").append('<div class="card rollover"> <div class = "front"><img class= "frontFace" src="img/fp.png" alt="card front"></div><div class="back"><img class= "frontFace" src="img/' + arr[i] + '"></div></div>');
     }
 
 

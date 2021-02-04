@@ -1,98 +1,92 @@
- <!DOCTYPE html>
- <html>
+<!DOCTYPE html>
+<html lang="en">
 
- <head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Picture-Flip Game</title>
-     <!-- Latest compiled and minified CSS -->
+<head>
+    <title>Picture-Flip Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
 
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-     <script src="js/main.js"></script>
-     <link rel="stylesheet" href="css/main.css">
- </head>
 
- <body>
-     <!--    Page Heading-->
-     <div class="jumbotron" id="title"><img id="heading" src="img/title.png" alt="Flip the card"></div>
 
-     <!--    Outer box for the cards.-->
-     <div class="container-fluid">
 
-         <!--         Start screen -->
-         <div class="startScreen">
-             <div id="timer">3</div>
-         </div>
 
-         <!--         Game Over -->
-         <div class="endScreen hide">
-             <div id='msg'>GAME OVER! </div>
-             <button type="button" onclick="reloading();" class=" btn restart btn-sm btn-primary">RESTART</button>
-         </div>
-         <!-- Modal -->
-         <div id="myModal" class="modal fade" role="dialog">
-             <div class="modal-dialog">
+<body>
+    <!--    Page Heading-->
+    <div class="jumbotron text-center" id="title"><img id="heading" src="img/title.png" alt="Flip the card"></div>
 
-                 <!-- Modal content-->
-                 <div class="modal-content">
-                     <div class="modal-header">
-                         <h4 class="modal-title">Info</h4>
-                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <!--    Outer box for the cards.-->
+    <div class="container">
+        <div class="row">
+            <!--         Start screen -->
+            <div class="startScreen col-sm-12 col-md-12">
+                <div id="timer">3</div>
+            </div>
 
-                     </div>
-                     <div class="modal-body">
-                         <p>This game is designed using HTML, CSS, JQuery and Bootstrap.</p>
-                     </div>
-                     <div class="modal-footer">
-                         <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Close</button>
-                     </div>
-                 </div>
+            <!--         Game Over -->
+            <div class="endScreen col-sm-12 col-md-12 hide">
+                <div id='msg'>GAME OVER! </div>
+                <button type="button" onclick="reloading();" class=" btn restart btn-sm btn-primary">RESTART</button>
+            </div>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
 
-             </div>
-         </div>
-         <!--         3 columns in a row-->
-         <div class="row">
-             <!--            Left Side bar -->
-             <div class="side col-sm-12 col-md-2">
-                 <!--  P for Initial stats -->
-                 <p class="score">POINTS: <span id="points">0</span> CLICKS: <span id="click">0</span> TIMER: <span id="time">0 Seconds</span></p>
-             </div>
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Info</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-             <!--             Middle col with cards -->
-             <div class="containers col-sm-12 col-md-8">
-             </div>
+                        </div>
+                        <div class="modal-body">
+                            <p>This game is designed using HTML, CSS, JQuery and Bootstrap.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
 
-             <!--             Right side bar-->
-             <div class="col-sm-12 col-md-2">
-                 <!-- Nav Bar -->
+                </div>
+            </div>
+            <!--         3 columns in a row-->
 
-                 <nav class="navbar justify-content-center">
+            <!--            Left Side bar -->
+            <div class=" score col-sm-12 col-md-2">
+                <!--  P for Initial stats -->
+                <h3>POINTS:<span id="points">0</span> CLICKS:<span id="click">0</span> TIMER:<span id="time">0 Seconds</span></h3>
+            </div>
 
-                     <ul class="navbar-nav">
-                         <li class="nav-item">
-                             <button type="button" class=" strt btn btn-sm btn-warning" data-toggle='modal' data-target='#myModal'>Game Info</button>
-                         </li>
-                         <li class="nav-item">
-                             <!-- reload button-->
-                             <button type="button" onclick="reloading();" class="btn btn-sm btn-primary">Reload Game</button>
-                         </li>
+            <!--             Middle col with cards -->
+            <div class="abc col-sm-12 col-md-8">
+            </div>
 
-                         <li class="nav-item">
-                             <!--My portfolio -->
-                             <button type="button" class="btn btn-sm btn-info" onclick="location.href='http://kaurbalpreet.altervista.org/'">Developer Info</button>
-                         </li>
-                     </ul>
-                 </nav>
-             </div>
-         </div>
-     </div>
- </body>
- <div class="container-fluid text-center">
-     <p class="foot"> ©2021 Made by Balpreet Kaur ♥️</p>
- </div>
+            <!--             Right side bar-->
+            <div class="col-xs-12 col-sm-12 col-md-2 right">
+                <!--game info-->
+                <button type="button" class="strt bt btn bt-sm btn-primary" data-toggle='modal' data-target='#myModal'>Game Info</button>
 
- </html>
+                <!-- reload button-->
+                <button type="button" onclick="reloading();" class="bt btn bt-sm btn-primary">Reload Game</button>
+
+                <!--My portfolio -->
+                <button type="button" class="bt btn bt-sm btn-primary" onclick="location.href='http://kaurbalpreet.altervista.org/'">Developer Info</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!--     Footer-->
+    <div class="container-fluid footer text-center">
+        <p class="foot"> ©2021 Made by Balpreet Kaur ♥️</p>
+    </div>
+
+</body>
+
+</html>
