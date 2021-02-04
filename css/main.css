@@ -96,8 +96,9 @@ p {
 /*Flip Cards properties */
 .card {
     position: relative;
-    width: 25%;
+    width: 24%;
     height: 130px;
+    margin: 0.2vw;
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
