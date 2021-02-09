@@ -23,7 +23,9 @@ body {
 
 /* Designing P tag with stats*/
 p {
-    font-size: 2vw;
+    /*    font-size: 2vw;*/
+    font-size: 2.5vw;
+    padding-top: 1em;
     text-align: center;
     color: maroon;
     font-family: monospace;
@@ -88,9 +90,11 @@ p {
 }
 
 .score {
-    background-color: #ffca18;
+
+    border: 1px solid #ffca18;
     opacity: 0.8;
     border-radius: 15px;
+
 }
 
 /*Flip Cards properties */
