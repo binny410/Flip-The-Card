@@ -1,7 +1,9 @@
 $(document).ready(function () {
 
     // Array with values to be shuffled.
-    var arr = ["hinata.png", "itachi.jpg", "kakashi.png", "minato.png", "naruto.jpg", "sakura.png", "sasuke.jpg", "team7.png", "minato.png", "sasuke.jpg", "naruto.jpg", "itachi.jpg", "hinata.png", "team7.png", "kakashi.png", "sakura.png"];
+    arr = ["hinata.png", "itachi.jpg", "kakashi.png", "minato.png", "naruto.jpg", "sakura.png", "sasuke.jpg", "team7.png", "minato.png", "sasuke.jpg", "naruto.jpg", "itachi.jpg", "hinata.png", "team7.png", "kakashi.png", "sakura.png"];
+
+    checkArray = [];
 
     //    Initial score value.
     let score = 0;
@@ -64,20 +66,20 @@ $(document).ready(function () {
     }
 
 
-    //    NEW CODE..
     //    Getting value of the clicked card.
     $(".card").click(function (index) {
-        var checkArray = []
 
-        $(".card").each(function () {
-            if ($(this).hasClass("done")) {
-                checkArray.push(1)
-            }
-        })
+        //        $(".card").each(function () {
+        //            if ($(this).hasClass("done")) {
+        //                checkArray.push(1);
+        //                console.log("ckarr" + checkArray)
+        //                console.log("len" + checkArray.length)
+        //            }
+        //        })
 
         //If all the cards has been revealed.
         if (checkArray.length == arr.length) {
-            $(".endScreen").removeClass("hide");
+            //            $(".endScreen").removeClass("hide");
         } else {
             //Incrementing value of click.
             clicks = clicks + 1;
@@ -85,7 +87,7 @@ $(document).ready(function () {
 
             //            getting id of the clicked div.
             var elmId = $(this).attr('id');
-            console.log("elmid: " + elmId);
+            //            console.log("elmid: " + elmId);
 
             if ($(this).hasClass("done")) {
                 //Nothing 
@@ -98,7 +100,7 @@ $(document).ready(function () {
 
                 //getting index of the clicked div.
                 var currentIndex = $(this).index();
-                console.log("currentIndex: " + currentIndex);
+                //                console.log("currentIndex: " + currentIndex);
 
 
                 $(".card").each(function (index) {
@@ -146,12 +148,28 @@ $(document).ready(function () {
             }
 
         }
-
+        gameOver(arr);
     });
-});
 
+});
 
 //reload function.
 function reloading() {
     location.reload();
+}
+
+//end function
+function gameOver(arr) {
+    var count = 0;
+    $(".card").each(function () {
+        if ($(this).hasClass("done")) {
+            count += 1;
+            //            console.log("In count: " + count);
+        }
+    });
+    console.log("Out count: " + (count));
+
+    if ((count) == arr.length) {
+        $('.endScreen').removeClass('hide');
+    }
 }

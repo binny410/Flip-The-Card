@@ -23,7 +23,7 @@ body {
 
 /* Designing P tag with stats*/
 p {
-    /*    font-size: 2vw;*/
+    font-size: 2vw;
     text-align: center;
     color: maroon;
     font-family: monospace;
